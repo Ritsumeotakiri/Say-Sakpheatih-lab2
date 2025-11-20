@@ -1,0 +1,81 @@
+
+Part 1 — Containerize an Application
+
+- Learned what a containerized app is.
+- Used a sample Node.js app.
+- Wrote a Dockerfile (FROM, WORKDIR, COPY, RUN, EXPOSE, CMD).
+- Built an image with `docker build`.
+- Ran the app in a container with port mapping.
+- Checked running containers using `docker ps`.
+- Understood how Docker images and containers work together.
+
+
+Part 2 — Update the Application
+
+- Made changes to the app code (UI update).
+- Rebuilt the Docker image (same tag overwrites old image).
+- Stopped and removed old containers.
+- Ran a fresh container with the updated image.
+- Learned that containers don’t auto-update when code changes — you must rebuild.
+
+Part 3 — Share the Application (Push to Docker Hub)
+
+- Logged in to Docker Hub.
+- Tagged the local image with your Docker Hub username.
+- Pushed the image to Docker Hub.
+- Verified that the image is now publicly available.
+- Learned how to share images with others via registry.
+
+
+Part 4 — Persist the Todo Data (Volumes)
+
+- Without volumes, container data is lost when container stops.
+- Created a volume using `docker volume create`.
+- Attached the volume to the container (`-v volume-name:/data`).
+- Verified that todo items persist even after deleting containers.
+- Learned difference between container filesystem and external volumes.
+
+Part 5 — Use Bind Mounts for Development
+
+- Bind mounts sync a local folder with the container.
+- Changes in code reflect instantly inside the running container.
+- Used nodemon in the container to auto-restart on file changes.
+- Perfect setup for live development workflows.
+
+Part 6 — Multi-Container Apps (Docker Compose)
+
+- Introduced docker-compose.yml for defining multi-service apps.
+- App service + database service defined in one YAML file.
+- Environment variables explained (DB host, user, etc.).
+- `docker compose up` starts entire app stack.
+- Learned how containers communicate via internal Docker networks.
+
+
+Part 7 — Protecting Secrets
+
+- Avoid putting passwords inside Dockerfiles or code.
+- Learned ways to store secrets:
+  - Environment variables
+  - docker-compose secrets
+  - external secret managers
+- Explained why secrets should never be committed to Git.
+
+
+Part 8 — Deploying to a Cloud Server
+
+- Deployed the dockerized app to a cloud VM.
+- Installed Docker on the server.
+- Pulled image from Docker Hub.
+- Ran it with proper port exposure.
+- Learned the concept of running containers in production environments.
+
+
+Part 9 — Deploy with a Managed Container Service
+
+- Used container services (ECS, ACI, etc.) to run images without managing servers.
+- Pushed images to a registry (Docker Hub/Azure/AWS).
+- Learned how orchestration services:
+  - auto-restart containers
+  - scale replicas
+  - manage logs and networking
+- High-level introduction to cloud container orchestration.
